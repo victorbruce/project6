@@ -36,4 +36,7 @@ header p {
   border-bottom: 3px solid red;
 }
 
-
+#game {
+  margin-top: 20px;
+  margin-left: 27%;
+}
