@@ -1,55 +1,70 @@
-/* Step1: Generating a Map 
+// Task: [] Generate the Game Map
+
+/* Steps */
+/* [x] create a Game Framework skeleton to expose public APIS
+   [x] The framework should hold methods that starts the game and keeps the game running;
+   [x] A function that calls the game after all elements have been loading
+   [] Draw the board map
+   [] Make box empty or dimmed
+   [] Place weapons randomly on the board
+   [] Place two players randomly on the board
+ */
+
+window.onload = function init() {
+  const game = new GF();
+  // game.start();
+}
+
+let GF = function() {
+  // Global variables
+  let canvas, ctx, GAME_WIDTH, GAME_HEIGHT;
   
-  * Objectives:
-  1. Randomly generate each map.
-  2. Create different types of weapons up to four(4).
-  3. Each weapon should have a name and associated visual.
-  4. Default weapon should carry 10 points for each player.
-  5. Number of players in a game should be two.
-  6. Players must be placed randomly on the map when the game loads
-  6. Players cannot be together.
+  const boardData = [
+    [1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1],
+    [1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1],
+    [1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0],
+    [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+    [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
+  ];
 
-*/
+  // drawing the board
+  function gameBoard() {
 
-// weapons
-const weapons = [
-  { name: "potatoes", image: "", default: false, points: 20 },
-  { name: "tomatoes", image: "", default: true, points: 10 },
-  { name: "garden-eggs", image: "", default: false, points: 15 },
-  { name: "pepper", image: "", default: false, points: 10 }
-];
+  }
 
-const canvas = document.getElementById("game");
-const ctx = canvas.getContext("2d");
-const ROW = 15;
-const COL = 15;
-const VACANT = "WHITE";
-const SQ = 40;
+  // clear context
+  function clearCanvas() {
+    ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+  }
 
-function drawSquare(x, y, color) {
-  ctx.fillStyle = color;
-  ctx.fillRect = (x * SQ, y * SQ, SQ, SQ);
-  ctx.strokeStyle = "black";
-  ctx.strokeRect(x * SQ, y * SQ, SQ, SQ);
-}
+  // a function to keep the game running
+  function mainLoop() {
+    clearCanvas();
 
-// create board
-let board = [];
-for (let r = 0; r < ROW; r++) {
-  board[r] = [];
+    document.body.innerHTML += '*'; 
+    requestAnimationFrame(mainLoop);
+  }
 
-  for (let c = 0; c < COL; c++) {
-    board[r][c] = "VACANT";
+  // a function to start the game
+  function start () {
+    canvas = document.querySelector('#gameCanvas');
+    GAME_WIDTH = canvas.width;
+    GAME_HEIGHT = canvas.height;
+
+    // 2d context
+    ctx = canvas.getContext('2d');
+
+    requestAnimationFrame(mainLoop())
+  }
+
+  // returns methods that is public and can be accessed by any element.
+  return {
+    start: start
   }
 }
 
-// Draw board
-function drawBoard() {
-  for (let r = 0; r < ROW; r++) {
-    for (let c = 0; c < COL; c++) {
-      drawSquare(c, r, board[r][c]);
-    }
-  }
-}
 
-drawBoard();
