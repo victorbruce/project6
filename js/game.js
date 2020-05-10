@@ -86,8 +86,8 @@ var Game = {
 	
 	// Creating player objects and placing players on a game board
 	createPlayers: function() {
-		player1 = new Player("White Knight","player",1,100,knife);
-		player2 = new Player("Black Knight","player",2,100,knife);
+		player1 = new Player("White Fighter","player",1,100,knife);
+		player2 = new Player("Black Fighter","player",2,100,knife);
 		Game.placeItem(player1);
 		Game.placeItem(player2);
 	},
