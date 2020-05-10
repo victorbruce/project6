@@ -1,9 +1,10 @@
 body {
-	font-family: 'Lato', sans-serif;
+	font-family: sans-serif;
+	font-size: 16px;
 }
 
 #start-screen-wrapper {
-	background-image: url("../img/start_screen_background.jpg");
+	background-color: #fff;
 	background-size: 100% 100%;
 	width: 1000px;
 	height: 700px;
@@ -16,29 +17,32 @@ body {
 #start-screen {
 	width: 700px;
 	height: 500px;
+	box-shadow: rgba(0,0,0, 0.8);
+	border: 1px solid #ddd;
+	padding: 30px;
 }
 
 #start-screen h1 {
+	color: purple;
 	text-align: center;
 	margin-top: 5px;
 	margin-bottom: 5px;
-	font-family: 'Merienda', cursive;
+	font-family: sans-serif;
 }
 
 #start-screen h2 {
 	text-align: center;
-	font-family: 'Domine', serif;
-	margin: 1px 0px;
+	margin: 10px 0px;
+	color: green;
+	font-weight: bold;
 }
 
 #start-screen h3, li {
-	font-family: 'Domine', serif;
 	margin: 5px 0px;
 }
 
 ul {
-	margin: 5px 0px;
-	list-style-type: circle;
+	margin: 10px 0px;
 }
 
 li {
@@ -57,24 +61,23 @@ p {
 }
 
 #start-button, #play-again-button {
-	width: 150px;
-	height: 40px;
+	margin-top: 30px;
+	padding: 10px 15px;
 	border: 1px solid black;
 	border-radius: 25px;
-	background-color: green;
-	color: white;
+	background-color: lightgreen;
+	color: black;
 	font-size: 20px;
 	font-weight: 700;
 }
 
 #start-button:hover, #play-again-button:hover {
-	width: 160px;
-	height: 50px;
-	background-color: red;
+	background-color: green;
+	color: white;
 }
 
 #game-wrapper {
-	margin: auto;
+	margin: 60px auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -86,7 +89,7 @@ p {
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #fff;
+	background-color: tomato;
 	background-size: 100% 100%;
 	border-radius: 25px;
 }
@@ -94,7 +97,9 @@ p {
 #player-1-data-div, #player-2-data-div {
 	width: 265px;
 	height: 700px;
-	background-image: url("../img/papyrus.jpg");
+	background: lightgreen;
+	margin: 0 10px;
+	border: 1px dashed #000;
 	background-size: 100% 100%;
 	display: flex;
 	justify-content: center;
@@ -114,17 +119,19 @@ table {
 	height: 680px;
 	box-sizing: border-box;
 	border-spacing: 0;
-	background-color: #fff;
+	background-color: white;
 	background-size: 100% 100%;
 	border-radius: 18px;
 }
 
 td {
 	box-sizing: border-box;
+	border: 1px solid #000;	
 }
 
 .obstacle {
-	background-image: url("../img/tree.gif");
+	/*background-image: url("../img/tree.gif");*/
+	background-color: #222;
 	background-size: 100% 100%;
 }
 
@@ -185,24 +192,24 @@ td {
 }
 
 .highlighted {
-	background-color: white;
+	background-color: lightgreen;
 	opacity: 0.5;
 	border-radius: 20px;
 }
 
 .highlighted:hover {
-	background-color: yellow;
+	background-color: green;
 	opacity: 0.3;
 }
 
 .player-number {
 	font-size: 26px;
 	margin-top: 5px;
-	margin-bottom: 3px;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 .player-name {
-	font-family: 'Merienda', cursive;
 	font-size: 24px;
 	margin-bottom: 3px;
 }
@@ -216,14 +223,14 @@ td {
 .player-health {
 	display: flex;
 	justify-content: space-around;
-	font-family: 'Domine', serif;
 	font-size: 23px;
-	margin-bottom: 3px;
+	margin-bottom: 10px;
 }
 
-.player-weapon-title {
+.player-weapon-title, .player-health-title, .player-weapon-damage-title {
 	font-size: 23px;
 	margin-bottom: 3px;
+	font-weight: bold;
 }
 
 .player-weapon-picture img {
@@ -233,15 +240,16 @@ td {
 }
 
 .player-weapon-name {
-	font-family: 'Merienda', cursive;
 	font-size: 23px;
 	text-transform: capitalize;
+	font-weight: bold;
+	color: orange;
+	margin-bottom: 10px;
 }
 
 .player-weapon-damage {
 	display: flex;
 	justify-content: space-around;
-	font-family: 'Domine', serif;
 	font-size: 23px;
 	margin-bottom: 3px;
 }
@@ -263,6 +271,9 @@ td {
 	height: 70px;
 	padding: 5px;
 	font-size: 24px;
+	font-weight: bold;
+	color: blue;
+	margin-top: 20px;
 }
 
 .fight-message {
@@ -273,6 +284,7 @@ td {
 	height: 70px;
 	padding: 5px;
 	font-size: 19px;
+	font-weight: bold;
 }
 
 .buttons {
@@ -298,6 +310,7 @@ button:focus {
 	color: white;
 	font-size: 23px;
 	font-weight: 700;
+	margin-bottom: 5px;
 }
 
 .button-attack:hover {
@@ -330,7 +343,7 @@ button:focus {
 	margin-left: -160px;
 	margin-top: -50px;
 	z-index: 1;
-	background-image: url("../img/board_wrapper_background.jpg");
+	background-color: tomato;
 	background-size: 100% 100%;
 	border-radius: 35px;
 	display:flex;
@@ -341,7 +354,7 @@ button:focus {
 #start-battle-message {
 	width: 300px;
 	height: 80px;
-	background-image: url("../img/game_over_background.jpg");
+	background-color: lightgreen;
 	background-size: 100% 100%;
 	border-radius: 25px;
 	text-align: center;
@@ -360,7 +373,7 @@ button:focus {
 	margin-left: -200px;
 	margin-top: -200px;
 	z-index: 1;
-	background-image: url("../img/board_wrapper_background.jpg");
+	background-color: tomato;
 	background-size: 100% 100%;
 	border-radius: 25px;
 	display:flex;
@@ -371,7 +384,7 @@ button:focus {
 #game-over {
 	width: 375px;
 	height: 375px;
-	background-image: url("../img/game_over_background.jpg");
+	background-color: lightgreen;
 	background-size: 100% 100%;
 	border-radius: 25px;
 	display: flex;
@@ -381,12 +394,10 @@ button:focus {
 }
 
 #game-over h1 {
-	font-family: 'Merienda', cursive;
 	margin-bottom: 10px;
 }
 
 #game-over h2 {
-	font-family: 'Domine', serif;
 	margin: 10px 0px;
 }
 
